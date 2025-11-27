@@ -621,15 +621,4 @@ For issues, questions, or contributions:
 2. Create a new issue with detailed description
 3. Submit pull requests with improvements
 
-## License
 
-This project is open source and available under the MIT License.
-
-## Author
-
-[Your Name/Organization]
-
----
-
-**Last Updated**: November 28, 2025
-**Version**: 1.0.0
