@@ -2,7 +2,7 @@
 
 A complete full-stack CRUD application using the MEAN stack with Docker containerization, Docker Compose orchestration, and GitHub Actions CI/CD pipeline for automated deployment.
 
-## 🎯 Project Overview
+## Project Overview
 
 This is an enterprise-ready MEAN stack application that demonstrates:
 - **MongoDB**: NoSQL database for tutorial data persistence
@@ -27,7 +27,7 @@ This is an enterprise-ready MEAN stack application that demonstrates:
 ✅ Health checks for all services
 ✅ Comprehensive documentation and troubleshooting guides
 
-## 📋 Quick Start
+## Quick Start
 
 ### Option 1: Using Docker Compose (Recommended)
 
@@ -72,7 +72,7 @@ ng serve --port 8081
 
 Navigate to `http://localhost:8081`
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 crud-dd-task-mean-app/
@@ -113,7 +113,7 @@ crud-dd-task-mean-app/
 └── README.md
 ```
 
-## 🚀 Deployment Guide
+## Deployment Guide
 
 For complete deployment instructions, see:
 - **[DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)** - Full deployment walkthrough
@@ -127,7 +127,7 @@ For complete deployment instructions, see:
 4. **Monitor GitHub Actions** - Watch pipeline execute
 5. **Verify on VM** - Application accessible at `http://vm-ip`
 
-## 🐳 Docker Images
+## Docker Images
 
 ### Backend Image
 - **Base**: node:18-alpine (lightweight)
@@ -146,7 +146,7 @@ For complete deployment instructions, see:
 - **Authentication**: Enabled with admin credentials
 - **Persistence**: Docker volume for data durability
 
-## 🔄 CI/CD Pipeline
+## CI/CD Pipeline
 
 The GitHub Actions workflow automatically:
 
@@ -166,7 +166,7 @@ The GitHub Actions workflow automatically:
 3. **Notifications** (Optional):
    - Send Slack notifications on success/failure
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### Base URL
 - Local: `http://localhost:8080`
@@ -207,7 +207,7 @@ curl -X POST http://localhost:8080/api/tutorials \
 }
 ```
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Component | Technology | Version |
 |-----------|-----------|---------|
@@ -219,7 +219,7 @@ curl -X POST http://localhost:8080/api/tutorials \
 | Web Server | Nginx | Alpine |
 | CI/CD | GitHub Actions | Latest |
 
-## 📋 Environment Variables
+## Environment Variables
 
 ### Backend
 ```
@@ -235,7 +235,7 @@ MONGO_INITDB_ROOT_PASSWORD=password123
 MONGO_INITDB_DATABASE=dd_db
 ```
 
-## 🔒 Security Features
+## Security Features
 
 - ✅ MongoDB authentication enabled
 - ✅ CORS configured for secure cross-origin requests
@@ -245,7 +245,7 @@ MONGO_INITDB_DATABASE=dd_db
 - ✅ Health checks for service reliability
 - ✅ Non-root container execution
 
-## 📊 Architecture Diagram
+## Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -275,20 +275,20 @@ MONGO_INITDB_DATABASE=dd_db
     └─────────────────────┘
 ```
 
-## 🚀 Deployment URLs
+## Deployment URLs
 
 After deployment:
 - **Application**: `http://<your-vm-ip>`
 - **API**: `http://<your-vm-ip>:8080` or `http://<your-vm-ip>/api`
 
-## 📚 Documentation
+## Documentation
 
 - **[DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)** - Complete deployment guide with troubleshooting
 - **[GITHUB_SETUP.md](./GITHUB_SETUP.md)** - GitHub and CI/CD configuration
 - **[BACKEND SETUP]** - See `/backend/README.md` for backend-specific instructions
 - **[FRONTEND SETUP]** - See `/frontend/README.md` for frontend-specific instructions
 
-## 🆘 Troubleshooting
+## Troubleshooting
 
 ### Application won't start
 ```bash
@@ -322,7 +322,7 @@ docker-compose exec frontend curl http://localhost
 
 See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for more troubleshooting steps.
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create feature branch (`git checkout -b feature/AmazingFeature`)
@@ -330,23 +330,18 @@ See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for more troubleshooting steps.
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Open Pull Request
 
-## 📝 License
+## License
 
 This project is open source and available under the MIT License - see LICENSE file for details.
 
-## 👤 Author
 
-[Your Name/Organization]
-
----
-
-## 📞 Support
+## Support
 
 For issues, questions, or suggestions:
-- 📖 Check documentation first
-- 🐛 Search existing GitHub Issues
-- ❓ Create new issue with detailed description
-- 💬 Check troubleshooting section in DEPLOYMENT_GUIDE.md
+- Check documentation first
+- Search existing GitHub Issues
+- Create new issue with detailed description
+- Check troubleshooting section in DEPLOYMENT_GUIDE.md
 
 ## 🎉 Acknowledgments
 
@@ -357,6 +352,3 @@ For issues, questions, or suggestions:
 
 ---
 
-**Version**: 1.0.0
-**Last Updated**: November 28, 2025
-**Status**: Production Ready ✅
