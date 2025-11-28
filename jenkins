@@ -1,0 +1,48 @@
+pipeline {
+    agent {label"dockerbuild"}
+
+    stages {
+        stage('code') {
+            steps {
+                echo 'clonning the code'
+                git url:"https://github.com/voidVisual/taskdollar.git",branch:"main"
+            }
+        }
+        stage('Build Frontend Image') {
+            steps {
+        echo "Building frontend image from ./frontend"
+        // build context is ./frontend -- change if your frontend Dockerfile location differs
+                sh "docker build -t ${env.FRONTEND_REPO}:${latest} ./frontend"
+                sh "docker tag ${env.FRONTEND_REPO}:${latest} ${env.FRONTEND_REPO}:latest"
+      }
+    }
+
+    stage('Build Backend Image') {
+      steps {
+        echo "Building backend image from ./backend"
+     
+        sh "docker build -t ${env.BACKEND_REPO}:${latest} ./backend"
+        sh "docker tag ${env.BACKEND_REPO}:${latest} ${env.BACKEND_REPO}:latest"
+      }
+    }
+        stage('docker push') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId:"dockerhub-key",
+                    usernameVariable:"dockerHubUser", 
+                    passwordVariable:"dockerHubPass")]){
+                sh 'echo $dockerHubPass | docker login -u $dockerHubUser --password-stdin'
+                sh "docker image tag travel-agency-web:latest ${env.dockerHubUser}/travel-agency-web:latest"
+                sh "docker push ${env.dockerHubUser}/travel-agency-web:latest"
+                echo 'pushing latest image to the docker hub'}
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'deploy to EC2'
+                 sh "docker compose down && docker compose up -d --build"
+            }
+        }
+        
+    }
+}
